@@ -1,15 +1,15 @@
 require 'pry'
 def nyc_pigeon_organizer(data)
   new_hash = {}
-  data.each do |attribute_key, attribute_hash|
-    attribute_hash.each do |attribute, birds_array|
-      birds_array.each do |bird|
+  data.each do |key, hash|
+    hash.each do |attribute, bird|
+      birds.each do |bird|
         if new_hash[bird].nil?
           attribute_array = []
           attribute_array << attribute.to_s
-          new_hash[bird] = {attribute_key => attribute_array}
-        elsif !new_hash[bird][attribute_key].nil?
-          new_hash[bird][attribute_key] << attribute.to_s
+          new_hash[bird] = {key => attribute_array}
+        elsif !new_hash[bird][key].nil?
+          new_hash[bird][key] << attribute.to_s
         end
       end
     end
