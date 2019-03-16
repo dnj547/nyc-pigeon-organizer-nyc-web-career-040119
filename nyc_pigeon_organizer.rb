@@ -11,6 +11,7 @@ def nyc_pigeon_organizer(data)
             new_hash[bird] = {attribute_key => attribute_array}
           else
             new_hash[bird][attribute_key] << attribute.to_s
+            binding.pry
           end
         end
       end
