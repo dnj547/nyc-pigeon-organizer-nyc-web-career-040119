@@ -2,7 +2,7 @@ require 'pry'
 def nyc_pigeon_organizer(data)
   new_hash = {}
   data.each do |key, hash|
-    hash.each do |attribute, bird|
+    hash.each do |attribute, birds|
       birds.each do |bird|
         if new_hash[bird].nil?
           attribute_array = []
