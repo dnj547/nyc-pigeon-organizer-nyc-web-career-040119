@@ -10,10 +10,10 @@ def nyc_pigeon_organizer(data)
           attribute_array = []
           attribute_array << attribute.to_s
           new_hash[bird] = {key => attribute_array}
-          binding.pry
         end
       end
     end
+    binding.pry
   end
   new_hash
 end
