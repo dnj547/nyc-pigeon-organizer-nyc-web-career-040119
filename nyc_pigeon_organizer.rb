@@ -6,11 +6,11 @@ def nyc_pigeon_organizer(data)
       birds.each do |bird|
         if !new_hash[bird][key].nil?
           new_hash[bird][key] << attribute.to_s
-          binding.pry
         else
           attribute_array = []
           attribute_array << attribute.to_s
           new_hash[bird] = {key => attribute_array}
+          binding.pry
         end
       end
     end
