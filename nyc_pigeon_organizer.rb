@@ -4,18 +4,16 @@ def nyc_pigeon_organizer(data)
   data.each do |key, hash|
     hash.each do |attribute, birds|
       birds.each do |bird|
-        if !new_hash[bird].nil?
-          if !new_hash[bird][key].nil?
-            new_hash[bird][key] << attribute.to_s
-          elsif new_hash[bird][key].nil?
-            attribute_array = []
-            attribute_array << attribute.to_s
-            new_hash[bird] = {key => attribute_array}
-          end
-        elsif new_hash[bird].nil?
+        if new_hash[bird].nil?
           attribute_array = []
           attribute_array << attribute.to_s
           new_hash[bird] = {key => attribute_array}
+        elsif !new_hash[bird].nil? && new_hash[bird][key].nil?
+          attribute_array = []
+          attribute_array << attribute.to_s
+          new_hash[bird] = {key => attribute_array}
+        elsif !new_hash[bird].nil? && !new_hash[bird][key].nil?
+          new_hash[bird][key] << attribute.to_s
         end
       end
     end
