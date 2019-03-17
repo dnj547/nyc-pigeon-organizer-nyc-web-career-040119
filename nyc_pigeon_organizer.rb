@@ -4,6 +4,7 @@ def nyc_pigeon_organizer(data)
   data.each do |key, hash|
     hash.each do |attribute, birds|
       birds.each do |bird|
+        binding.pry
         if new_hash[bird].nil?
           attribute_array = []
           attribute_array << attribute.to_s
@@ -14,6 +15,5 @@ def nyc_pigeon_organizer(data)
       end
     end
   end
-  binding.pry
   new_hash
 end
