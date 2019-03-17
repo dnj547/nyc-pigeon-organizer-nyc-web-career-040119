@@ -7,13 +7,13 @@ def nyc_pigeon_organizer(data)
         if new_hash[bird].nil?
           attribute_array = []
           attribute_array << attribute.to_s
-          binding.pry
           new_hash[bird] = {key => attribute_array}
         elsif !new_hash[bird][key].nil?
           new_hash[bird][key] << attribute.to_s
         end
       end
     end
+    binding.pry
   end
   new_hash
 end
